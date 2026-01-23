@@ -1,5 +1,5 @@
-.logohome{width:100px;
-          height:100px;}
+.logohome{width:80px;
+          height:80px;}
 .noidung{
         display: flex;
         align-items:flex-start;
@@ -37,5 +37,5 @@ body {
             background: #f5f5f5;
         }      
 .noidungchinh {
-    margin-top: 80px; 
+    margin-top: 70px; 
 }
