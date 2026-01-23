@@ -2,3 +2,13 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
+.navbar {
+  position: sticky;
+  background-color: #3366CC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 56px;
+}
+
