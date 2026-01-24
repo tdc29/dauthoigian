@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>DẤU THỜI GIAN</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>DẤU THỜI GIAN</title>
+  <link rel="icon" type="image/png" href="images/LOGOHOME.PNG">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<header>
-    <div class="modau">
-    </div>
-</header>
+
 <nav class="dieuhuong" >
     <div class="dieuhuong-trai">
         <a href="index.html" class="logohome">
-             <img src="images/LOGOHOME.PNG" class="logohome">
+            <img src="images/LOGOHOME.PNG" class="logohome">
         </a>
         <ul class="noidung">
           <li><a href="loimodau.html">Lời mở đầu</a></li>
@@ -29,12 +27,35 @@
  
     </div>
 </nav>
-    <div class="tuongbentrai">
-    <img src="images/TUONG.png" width="200"  >
-</div>
-<div class="tuongbenphai">
-    <img src="images/TUONG.png" width="200"  >
-</div>
+
+  <section class="hero">
+    <h1>Lời nhắn</h1>
+    <p>"con đi qua trăm bể</p>
+    <p>mơ một triệu mùa xuân</p>
+    <p>cuối cùng nơi muốn đến</p>
+    <p>lại là nơi đã từng..."</p>
+    <p style="padding-left: 150px;">- Thơ của Lam -</p>
+  </section>
+
+  <section class="feedback-section">
+    <div class="feedback-container">
+        <h2>Hãy gửi lại đây những lời chưa ngỏ.</h2>
+        <form action="https://formspree.io/f/xdaepqpb" method="POST">
+            <div class="input-group">
+                <input type="text" name="hovaten" placeholder="Họ và tên..." required>
+                <input type="email" name="email"placeholder="Email liên lạc..." required>
+            </div>
+            <textarea placeholder="Viết những lời nhắn nhủ tại đây..." rows="5"></textarea>
+            <button type="submit" class="btn-send">Gửi</button>
+
+        </form>
+
+        <div class="contact-info">
+            <h3>Thông tin liên lạc</h3>
+            <p>📍 Địa chỉ: Trường THPT Vinh Xuân, xã Phú Vinh, Thành phố Huế</p>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
