@@ -1,12 +1,41 @@
-.logohome{width:100px;
-          height:100px;
-          margin-left: 95px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
+
+body {
+  background-image: url("../images/bautroi.png");
+    
+    /* Hình nền không bị lặp lại */
+    background-repeat: no-repeat;
+    /* Hình nền luôn cố định khi cuộn trang (tùy chọn, trông rất chuyên nghiệp) */
+    background-attachment: fixed;
+    /* Quan trọng nhất: Hình nền phủ kín toàn bộ chiều ngang và chiều cao */
+    background-size: cover;
+    /* Căn chỉnh hình nền luôn nằm chính giữa */
+    background-position: center;
+    /* Đảm bảo body luôn có chiều cao tối thiểu bằng màn hình */
+    min-height: 100vh;
+    margin: 0;
+
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.logohome{
+  width:100px;
+  height:100px;
+  margin-left: 95px;
+}
+
 .noidung{
+        font-family: 'Segoe UI', Tahoma, sans-serif;;
         display: flex;
         margin-left: 85px;
-        text-transform: uppercase;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         list-style: none;
 
@@ -22,17 +51,21 @@
 }
 .noidung li{
     margin-right: 25px;}
+
 .dieuhuong {
-            top: 0;    
-            left: 0;
-            background-color: #FFFF99;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;     
-            position: fixed; 
-            width: 100%;
-            }
+    top: 0;    
+    left: 0;
+    background: rgba(255, 255, 255, 0.6); /* Màu trắng trong suốt */
+    backdrop-filter: blur(5px);         /* Làm mờ ảnh nền phía sau */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;     
+    position: fixed; 
+    width: 100%;
+}
+
 .dieuhuong-trai { display: flex;
                   align-items: center;
                   font-family: "Arial";
@@ -45,30 +78,55 @@
             cursor: pointer;
 
 }
-            
+         
+
 .noidungchinh {
     margin-top: 80px; 
     margin-left: 200px;
     margin-right: 200px;
 }
-.tuongbentrai{
-    left: 0;
-    top:70px;
-    position: fixed;
-    width:200px;
-    height: 100%;
-    background-image :url("../images/TUONG.png");
-    background-repeat: repeat-y;
-    background-size: contain;
+
+/* ================= HERO  ================= */
+.hero {
+  font-size: 20px;
+  text-align: center;
+  padding: 80px 20px 70px;
 }
-.tuongbenphai{
-    right:0;
-    top:70px;
-    position: fixed;
-    width:200px;
-    height: 100%;
-    background-image :url("../images/TUONG.png");
-    background-repeat: repeat-y;
-    background-size: contain;
-          
+
+.hero h1 {
+  font-size: 48px;
+  color: #2f5d62;
+  margin-bottom: 14px;
 }
+
+.hero p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* ================= CARD  ================= */
+
+.card {
+  font-size: 20px;
+  background: #ffffff;
+  width: 85%;
+  margin: 40px auto;
+  padding: 30px 35px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card ul{
+  padding-left: 50px; /* thụt lề vào sâu hơn */
+}
+
+.card p{
+  text-align: justify;
+  padding-left: 15px;
+}
+
+.card h2 {
+  margin-bottom: 18px;
+  color: #2f5d62;
+}
+
