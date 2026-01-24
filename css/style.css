@@ -45,3 +45,22 @@ body {
 .noidungchinh {
     margin-top: 70px; 
 }
+.tuongbentrai{
+    left: 0;
+    top:70px;
+    position: fixed;
+    height: 100%;
+    background-image :url("images/TUONG.PNG");
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+.tuongbenphai{
+    right:0;
+    top:70px;
+    position: fixed;
+    height: 100%;
+    background-image :url("images/TUONG.PNG");
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+
