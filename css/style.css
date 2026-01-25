@@ -133,11 +133,12 @@ body {
 /* ================= GALLERY ================= */
 
 .gallery {
-  display: grid;
+  display: flex;       /* Dùng flex là đơn giản nhất */
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  display: flex;       /* Kích hoạt chế độ dàn hàng ngang */
-  flex-wrap: wrap;
+  flex-wrap: wrap;     /* Cho phép xuống hàng */
+  gap: 10px;           /* Khoảng cách giữa các khối ảnh */
+  padding: 10px;
+  justify-content: center; /* Căn giữa các ảnh cho đẹp */
 }
 
 .photo {
@@ -152,8 +153,7 @@ body {
   margin: 1%;      
   box-sizing: border-box; /* Giữ cho ảnh không bị đẩy xuống khi có viền */
   padding: 10px;
-  
-
+  margin-bottom: 10px;
 }
 
 /* Hiệu ứng khi di chuột vào cả khung ảnh */
@@ -178,11 +178,11 @@ body {
 .photo p {
   text-align: center;
   margin: 0;
-  padding: 15px 10px;
-  font-size: 14px;
+  padding: 30px 25px;
+  font-size: 30px;
   color: #444;
   font-weight: 600;
-  width: 50%;
+  width: 100%;
 }
 
 /* ================= LỜI NHẮN ================= */
