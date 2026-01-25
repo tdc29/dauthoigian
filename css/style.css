@@ -147,7 +147,9 @@ body {
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease; /* Hiệu ứng mượt cho cả khối */
-  width: 100%;      
+  width: 48%;    /* Để 48% để dư ra 4% làm khoảng cách giữa 2 ảnh cho đẹp */
+  float: left;   /* Lệnh "thần thánh" để các khối tự bám sát vào nhau */
+  margin: 1%;      
   box-sizing: border-box; /* Giữ cho ảnh không bị đẩy xuống khi có viền */
   padding: 10px;
   
