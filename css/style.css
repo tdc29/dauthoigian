@@ -147,7 +147,7 @@ body {
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease; /* Hiệu ứng mượt cho cả khối */
-  width: 50%;         /* Ép mỗi ảnh chiếm đúng một nửa hàng */
+  width: 100%;      
   box-sizing: border-box; /* Giữ cho ảnh không bị đẩy xuống khi có viền */
   padding: 10px;
   
@@ -179,7 +179,7 @@ body {
   padding: 15px 10px;
   font-size: 14px;
   color: #444;
-  font-weight: 500;
+  font-weight: 600;
   width: 50%;
 }
 
