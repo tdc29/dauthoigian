@@ -301,12 +301,12 @@ body {
 .photo p {
   text-align: center;
   margin: 0;
-  padding: 20px 15px;
-  font-size: 1.1rem; /* Chỉnh lại cỡ chữ cho vừa mắt hơn */
+  padding: 15px 10px; /* Giảm padding một chút */
+  font-size: 1.1rem;
   color: #333;
   font-weight: 600;
   background: #fff;
-  flex-grow: 1; /* Đảm bảo phần chữ luôn lấp đầy khoảng trống */
+  border-top: 1px solid #f0f0f0; /* Thêm đường kẻ nhẹ ngăn cách với ảnh */
 }
 
 /* Tùy chỉnh riêng cho các mục Video */
@@ -316,6 +316,54 @@ body {
 
 .video-grid video {
   background: #000; /* Nền đen cho video khi chưa load */
+}
+/* ================= BỘ NÚT CHỌN (TABS) ================= */
+
+.media-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* Tự động xuống dòng trên điện thoại */
+}
+
+.tab-btn {
+  padding: 12px 28px;
+  border: 2px solid #2d6a4f;
+  background: transparent;
+  color: #2d6a4f;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab-btn i {
+  font-size: 1.1rem;
+}
+
+/* Hiệu ứng khi di chuột hoặc khi nút đang hoạt động */
+.tab-btn:hover, 
+.tab-btn.active {
+  background: #2d6a4f;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(45, 106, 79, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Hiệu ứng ẩn hiện mượt mà cho Group */
+.media-group {
+  display: block; /* Mặc định hiển thị */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Lớp này dùng để ẩn các mục không được chọn */
+.hidden {
+  display: none !important;
 }
 
 /* ================= RESPONSIVE ================= */
