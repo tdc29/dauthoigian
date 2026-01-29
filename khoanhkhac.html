@@ -36,58 +36,26 @@
     <section class="card">
     <h2 class="section-main-title">📸 Khoảnh khắc đáng nhớ</h2>
 
-    <div class="media-group">
+    <div class="media-tabs">
+        <button class="tab-btn active" onclick="showMedia('all')">Tất cả</button>
+        <button class="tab-btn" onclick="showMedia('photo')"><i class="fas fa-camera"></i> Hình ảnh</button>
+        <button class="tab-btn" onclick="showMedia('video')"><i class="fas fa-video"></i> Video</button>
+    </div>
+
+    <div class="media-group" id="group-photo">
         <h3 class="group-title"><i class="fas fa-camera"></i> Album Hình Ảnh</h3>
         <div class="gallery">
             <div class="photo"><img src="images/lop.jpg"><p>Ngày 20/10 năm 2025</p></div>
             <div class="photo"><img src="images/trai.jpg"><p>Hội trại 26/3</p></div>
-            <div class="photo"><img src="images/20-11-2024.JPG"><p>Ngày 20/11 năm 2024</p></div>
-            <div class="photo"><img src="images/20-11-2025.jpg"><p>Ngày 20/11 năm 2025</p></div>
-            <div class="photo"><img src="images/IMG_5460 - Copy.JPG"><p>Ngày 19/11 năm 2025</p></div>
-            <div class="photo"><img src="images/lienhoan.jpg"><p>Liên hoan sau học kì I</p></div>
-            <div class="photo"><img src="images/TK2025.jpg"><p>Tổng kết lớp 11 năm 2025</p></div>
-            <div class="photo"><img src="images/aiday.jpeg"><p>Ai đây?</p></div>
-            <div class="photo"><img src="images/nhanthuong.jpg"><p>"Em...lên nhận quà."</p></div>
-            <div class="photo"><img src="images/ngonthi.jpg"><p>"Ngon thíiii"</p></div>
-        </div>
+            </div>
     </div>
 
-    <div class="media-group">
+    <div class="media-group" id="group-video">
         <h3 class="group-title"><i class="fas fa-video"></i> Thước Phim Kỷ Niệm</h3>
         <div class="gallery video-grid">
-            <div class="photo">
-                <video src="images/thanhtra.mp4" controls></video>
-                <p>Quan thanh tra</p>
+            <div class="photo"><video src="images/thanhtra.mp4" controls></video><p>Quan thanh tra</p></div>
+            <div class="photo"><video src="images/sieunhan+congchua.mp4" controls></video><p>Siêu nhân và Công chúa</p></div>
             </div>
-            <div class="photo">
-                <video src="images/sieunhan+congchua.mp4" controls></video>
-                <p>Siêu nhân và Công chúa</p>
-            </div>
-            <div class="photo">
-                <video src="images/dom.mp4" controls></video>
-                <p>Đóm!!!</p>
-            </div>
-            <div class="photo">
-                <video src="images/videotrai.mp4" controls></video>
-                <p>Hành trình tìm dép của NVC</p>
-            </div>
-            <div class="photo">
-                <video src="images/thucdon.mp4" controls></video>
-                <p>Bếp của Ba Tuệ</p>
-            </div>
-            <div class="photo">
-                <video src="images/thayduatdangeu.mp4" controls></video>
-                <p>Thầy Duật đáng êu!!</p>
-            </div>
-            <div class="photo">
-                <video src="images/chienthangcamxuc.mp4" controls></video>
-                <p>"Một chiến thắng quá cảm xúc của tập thể 11A1!!"</p>
-            </div>
-            <div class="photo">
-                <video src="images/english.mp4" controls></video>
-                <p>Singer</p>
-            </div>
-        </div>
     </div>
 </section>
 
