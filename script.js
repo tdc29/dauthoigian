@@ -214,24 +214,3 @@
     }, 1800000);
 
 })();
-function showMedia(type) {
-    const photoGroup = document.getElementById('group-photo');
-    const videoGroup = document.getElementById('group-video');
-    const buttons = document.querySelectorAll('.tab-btn');
-
-    // 1. Đổi màu nút được chọn
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-
-    // 2. Ẩn hiện nội dung
-    if (type === 'all') {
-        photoGroup.classList.remove('hidden');
-        videoGroup.classList.remove('hidden');
-    } else if (type === 'photo') {
-        photoGroup.classList.remove('hidden');
-        videoGroup.classList.add('hidden');
-    } else if (type === 'video') {
-        photoGroup.classList.add('hidden');
-        videoGroup.classList.remove('hidden');
-    }
-}
