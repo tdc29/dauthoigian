@@ -211,7 +211,7 @@ body {
   color: #666;
 }
 
-/* ================= TỔNG QUAN MỤC KHOẢNH KHẮC ================= */
+/* ================= CARD ================= */
 
 .card {
   font-size: 20px;
@@ -221,7 +221,7 @@ body {
   padding: 35px;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: relative; /* Cần thiết để chứa các input ẩn */
 }
 
 .section-main-title {
@@ -233,7 +233,7 @@ body {
   letter-spacing: 2px;
 }
 
-/* ================= LOGIC ẨN HIỆN (KHÔNG CẦN JS) ================= */
+/* ================= LOGIC ẨN HIỆN (BỔ SUNG) ================= */
 
 /* Mặc định ẩn các nhóm nội dung */
 .media-group {
@@ -246,23 +246,21 @@ body {
   animation: slideUp 0.5s ease forwards;
 }
 
-/* Khi Radio "Tất cả" được chọn */
+/* Logic điều khiển hiển thị bằng CSS Selector */
 #filter-all:checked ~ .group-photo,
 #filter-all:checked ~ .group-video {
   display: block;
 }
 
-/* Khi Radio "Hình ảnh" được chọn */
 #filter-photo:checked ~ .group-photo {
   display: block;
 }
 
-/* Khi Radio "Video" được chọn */
 #filter-video:checked ~ .group-video {
   display: block;
 }
 
-/* ================= THIẾT KẾ NÚT BẤM (TABS) ================= */
+/* ================= BỘ NÚT CHỌN (TABS) ================= */
 
 .media-tabs {
   display: flex;
@@ -272,7 +270,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Biến thẻ Label thành nút bấm */
 .tab-btn {
   padding: 12px 28px;
   border: 2px solid #2d6a4f;
@@ -301,10 +298,9 @@ body {
   background: #2d6a4f;
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(45, 106, 79, 0.3);
-  transform: translateY(-3px);
 }
 
-/* ================= GALLERY (HỆ THỐNG LƯỚI) ================= */
+/* ================= GALLERY (CHỈNH SỬA CHIA 3 CỘT) ================= */
 
 .group-title {
   font-size: 1.6rem;
@@ -319,7 +315,8 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* SỬA TẠI ĐÂY: Ép chia 3 cột đều nhau */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 25px;
   padding: 10px;
 }
@@ -344,7 +341,7 @@ body {
 .photo img, 
 .photo video {
   width: 100%;
-  height: 250px;
+  height: 250px; /* Chiều cao cố định để các ô bằng nhau */
   object-fit: cover;
   display: block;
   transition: transform 0.6s ease;
@@ -365,6 +362,10 @@ body {
   border-top: 1px solid #f0f0f0;
 }
 
+.video-grid .photo {
+  border-bottom: 4px solid #457b9d;
+}
+
 .video-grid video {
   background: #000;
 }
@@ -375,8 +376,14 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-
 /* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho iPad */
+  }
+}
+
 @media (max-width: 768px) {
   .card {
     width: 95%;
@@ -384,12 +391,12 @@ body {
   }
   
   .gallery {
-    grid-template-columns: 1fr; /* 1 cột trên điện thoại */
+    grid-template-columns: 1fr; /* 1 cột cho điện thoại */
     gap: 20px;
   }
 
   .photo img, .photo video {
-    height: 200px; /* Nhỏ lại một chút trên điện thoại */
+    height: 200px;
   }
 }
 /* ================= LỜI NHẮN ================= */
