@@ -211,18 +211,17 @@ body {
   color: #666;
 }
 
-/* ================= CARD  ================= */
-
 /* ================= TỔNG QUAN MỤC KHOẢNH KHẮC ================= */
 
 .card {
   font-size: 20px;
   background: #ffffff;
-  width: 90%; /* Tăng độ rộng một chút để không gian thoáng hơn */
+  width: 90%;
   margin: 40px auto;
   padding: 35px;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .section-main-title {
@@ -234,99 +233,46 @@ body {
   letter-spacing: 2px;
 }
 
-/* Từng nhóm phương tiện (Ảnh/Video) */
+/* ================= LOGIC ẨN HIỆN (KHÔNG CẦN JS) ================= */
+
+/* Mặc định ẩn các nhóm nội dung */
 .media-group {
+  display: none; 
   margin-bottom: 60px;
   padding: 20px;
   background: #fdfdfd;
   border-radius: 20px;
   border: 1px solid #eee;
+  animation: slideUp 0.5s ease forwards;
 }
 
-.group-title {
-  font-size: 1.6rem;
-  color: #457b9d;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-left: 6px solid #2d6a4f;
-  padding-left: 15px;
-}
-
-/* ================= GALLERY (HỆ THỐNG LƯỚI) ================= */
-
-.gallery {
-  display: grid;
-  /* Chia làm 3 cột trên máy tính, tự co giãn trên điện thoại */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  padding: 10px;
-}
-
-.photo {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: flex;
-  flex-direction: column; /* Để ảnh/video ở trên, chữ ở dưới */
-  border: 1px solid #f0f0f0;
-}
-
-/* Hiệu ứng bay lên khi di chuột */
-.photo:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Khung chứa nội dung (Ảnh hoặc Video) */
-.photo img, 
-.photo video {
-  width: 100%;
-  height: 250px; /* Cố định chiều cao để các khung đều nhau */
-  object-fit: cover; /* Cắt ảnh/video vừa vặn không bị méo */
+/* Khi Radio "Tất cả" được chọn */
+#filter-all:checked ~ .group-photo,
+#filter-all:checked ~ .group-video {
   display: block;
-  transition: transform 0.6s ease;
 }
 
-/* Zoom nhẹ khi hover */
-.photo:hover img {
-  transform: scale(1.08);
+/* Khi Radio "Hình ảnh" được chọn */
+#filter-photo:checked ~ .group-photo {
+  display: block;
 }
 
-/* Phần mô tả dưới ảnh/video */
-.photo p {
-  text-align: center;
-  margin: 0;
-  padding: 15px 10px; /* Giảm padding một chút */
-  font-size: 1.1rem;
-  color: #333;
-  font-weight: 600;
-  background: #fff;
-  border-top: 1px solid #f0f0f0; /* Thêm đường kẻ nhẹ ngăn cách với ảnh */
+/* Khi Radio "Video" được chọn */
+#filter-video:checked ~ .group-video {
+  display: block;
 }
 
-/* Tùy chỉnh riêng cho các mục Video */
-.video-grid .photo {
-  border-bottom: 4px solid #457b9d; /* Tạo điểm nhấn cho video */
-}
-
-.video-grid video {
-  background: #000; /* Nền đen cho video khi chưa load */
-}
-/* ================= BỘ NÚT CHỌN (TABS) ================= */
+/* ================= THIẾT KẾ NÚT BẤM (TABS) ================= */
 
 .media-tabs {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-bottom: 40px;
-  flex-wrap: wrap; /* Tự động xuống dòng trên điện thoại */
+  flex-wrap: wrap;
 }
 
+/* Biến thẻ Label thành nút bấm */
 .tab-btn {
   padding: 12px 28px;
   border: 2px solid #2d6a4f;
@@ -340,31 +286,95 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  user-select: none;
 }
 
-.tab-btn i {
-  font-size: 1.1rem;
+.tab-btn:hover {
+  background: rgba(45, 106, 79, 0.1);
+  transform: translateY(-3px);
 }
 
-/* Hiệu ứng khi di chuột hoặc khi nút đang hoạt động */
-.tab-btn:hover, 
-.tab-btn.active {
+/* Đổi màu nút khi Radio tương ứng được chọn */
+#filter-all:checked ~ .media-tabs label[for="filter-all"],
+#filter-photo:checked ~ .media-tabs label[for="filter-photo"],
+#filter-video:checked ~ .media-tabs label[for="filter-video"] {
   background: #2d6a4f;
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(45, 106, 79, 0.3);
   transform: translateY(-3px);
 }
 
-/* Hiệu ứng ẩn hiện mượt mà cho Group */
-.media-group {
-  display: block; /* Mặc định hiển thị */
-  transition: opacity 0.5s ease, transform 0.5s ease;
+/* ================= GALLERY (HỆ THỐNG LƯỚI) ================= */
+
+.group-title {
+  font-size: 1.6rem;
+  color: #457b9d;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-left: 6px solid #2d6a4f;
+  padding-left: 15px;
 }
 
-/* Lớp này dùng để ẩn các mục không được chọn */
-.hidden {
-  display: none !important;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 10px;
 }
+
+.photo {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+}
+
+.photo:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.photo img, 
+.photo video {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.08);
+}
+
+.photo p {
+  text-align: center;
+  margin: 0;
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+
+.video-grid video {
+  background: #000;
+}
+
+/* Hiệu ứng mượt khi hiện ra */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
