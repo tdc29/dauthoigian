@@ -86,6 +86,113 @@ body {
     margin-right: 200px;
 }
 
+/* ================= SƠ ĐỒ LỚP  ================= */
+
+:root {
+    --wood-color: #a1887f;
+    --wood-dark: #8d6e63;
+    --text-light: #ffffff;
+}
+
+.classroom-container {
+    padding: 40px 10px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.teacher-desk {
+    width: 200px;
+    height: 40px;
+    background: #5d4037;
+    margin: 0 auto 50px;
+    color: white;
+    line-height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.seating-map-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Khoảng cách tạo lối đi giữa các dãy */
+    flex-wrap: wrap;
+}
+
+.aisle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa hàng trên và hàng dưới */
+}
+
+/* Kiểu dáng bàn đôi */
+.desk-double {
+    display: flex;
+    width: 160px;
+    height: 60px;
+    border: 2px solid var(--wood-dark);
+    border-radius: 5px;
+    overflow: visible;
+    background-color: var(--wood-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.seat-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.seat-item:last-child { border-right: none; }
+
+.seat-item:hover {
+    background-color: var(--wood-dark);
+}
+
+.seat-name {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Thẻ thông tin hiện lên */
+.student-card {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 180px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.seat-item:hover .student-card {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.student-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 2px solid #a1887f;
+}
+
+.student-card h4 { margin: 5px 0; color: #333; font-size: 1rem; }
+.student-card p { font-size: 0.8rem; color: #777; font-style: italic; margin: 0; }
+
+
 /* ================= HERO  ================= */
 .hero {
   font-size: 20px;
